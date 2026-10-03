@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -xe
+
+cd "$(dirname "$(realpath "$0")")/.."
+
+destinationFolder=/opt/matlab/R2026a
+
+sudo mkdir -p "$destinationFolder"
+sudo chown "$USER": "$destinationFolder"
+
+./mpm install --inputfile mpm-input-r2026a.txt 
+
